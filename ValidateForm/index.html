@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Stimulus</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form
+      action="#"
+      data-controller="validator toggler"
+      data-validator-success-class="alert-success"
+      data-validator-warning-class="alert-warning"
+    >
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+      <div>
+        <label for="password">Contraseña</label>
+        <div class="flex-block">
+          <input
+            data-validator-target="passwordInput"
+            data-toggler-target="passwordInput"
+            data-action="input->validator#passwordChanged"
+            type="password"
+            name="password"
+            required
+          />
+          <button data-action="click->toggler#toggle" type="button">
+            <i class="gg-eye-alt"></i>
+          </button>
+        </div>
+        <p data-validator-target="passwordMessage"></p>
+      </div>
+    </form>
+    <script type="importmap">
+      {
+        "imports": {
+          "@hotwired/stimulus": "https://ga.jspm.io/npm:@hotwired/stimulus@3.2.2/dist/stimulus.js",
+          "check-password-strength": "https://ga.jspm.io/npm:check-password-strength@2.0.7/dist/umd.js"
+        }
+      }
+    </script>
+    <script type="module" src="javascript/main.js"></script>
+  </body>
+</html>

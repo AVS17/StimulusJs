@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeCounter</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main data-controller="timer">
+      <p class="text-secondary">
+        ¿Cuanto tiempo ha pasado desde que entraste a esta página?
+      </p>
+      <p class="message"></p>
+    </main>
+    <script type="importmap">
+      {
+        "imports": {
+          "@hotwired/stimulus": "https://ga.jspm.io/npm:@hotwired/stimulus@3.2.2/dist/stimulus.js"
+        }
+      }
+    </script>
+    <script type="module" src="javascript/main.js"></script>
+  </body>
+</html>
